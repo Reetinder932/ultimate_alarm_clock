@@ -36,6 +36,7 @@ class TimerController extends GetxController with WidgetsBindingObserver {
     super.onClose();
   }
 
+
   @override
   void didChangeAppLifecycleState(AppLifecycleState state) {
     super.didChangeAppLifecycleState(state);
@@ -197,4 +198,14 @@ class TimerController extends GetxController with WidgetsBindingObserver {
       remainingTime.value = Duration(seconds: seconds);
     }
   }
+  void calculateElapsedTime() {
+    final now = DateTime.now();
+    if (startTime.value > 0) {
+      final elapsedTime = now.difference(DateTime.fromMillisecondsSinceEpoch(startTime.value));
+
+      // You can use elapsedTime as needed
+      print('Elapsed Time: $elapsedTime');
+    }
+  }
+
 }

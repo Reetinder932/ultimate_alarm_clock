@@ -22,8 +22,8 @@ class SettingsView extends GetView<SettingsController> {
 
   @override
   Widget build(BuildContext context) {
-    var width = Get.width;
-    var height = Get.height;
+    var width = MediaQuery.of(context).size.width;
+    var height = MediaQuery.of(context).size.height;
     return Scaffold(
       appBar: AppBar(
         title: Text(
@@ -53,8 +53,8 @@ class SettingsView extends GetView<SettingsController> {
       body: SingleChildScrollView(
         child: Center(
           child: Padding(
-            padding: const EdgeInsets.symmetric(vertical: 25.0),
-            child: Column(
+            padding: const EdgeInsets.symmetric(vertical: 0.0),
+              child:Column(
               children: [
                 WeatherApi(
                   controller: controller,
@@ -83,6 +83,7 @@ class SettingsView extends GetView<SettingsController> {
                 const SizedBox(
                   height: 20,
                 ),
+
                 Enable24HourFormat(
                   height: height,
                   width: width,
@@ -92,6 +93,7 @@ class SettingsView extends GetView<SettingsController> {
                 const SizedBox(
                   height: 20,
                 ),
+
                 EnableSortedAlarmList(
                   controller: controller,
                   height: height,
@@ -124,6 +126,7 @@ class SettingsView extends GetView<SettingsController> {
           ),
         ),
       ),
+
     );
   }
 }

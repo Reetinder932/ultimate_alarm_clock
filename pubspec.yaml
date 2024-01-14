@@ -21,6 +21,7 @@ dependencies:
   flutter_fgbg: ^0.3.0
   flutter_svg: ^2.0.4
   isar: ^3.1.0+1
+  dropdown_below:
   isar_flutter_libs: ^3.1.0+1
   async: ^2.10.0
   flutter_secure_storage: ^8.0.0

@@ -15,7 +15,7 @@ extension GetRingtoneModelCollection on Isar {
 
 const RingtoneModelSchema = CollectionSchema(
   name: r'RingtoneModel',
-  id: 2389700415140569104,
+  id: 23897004151,
   properties: {
     r'currentCounterOfUsage': PropertySchema(
       id: 0,

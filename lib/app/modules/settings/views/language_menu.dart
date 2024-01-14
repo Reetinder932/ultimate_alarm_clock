@@ -5,19 +5,20 @@ import '../../../utils/constants.dart';
 import '../../../utils/utils.dart';
 import '../../settings/controllers/theme_controller.dart';
 import '../controllers/settings_controller.dart';
+import 'package:dropdown_below/dropdown_below.dart';
+
 
 class LanguageMenu extends StatefulWidget {
   const LanguageMenu({
-    super.key,
+    Key? key,
     required this.controller,
     required this.height,
     required this.width,
     required this.themeController,
-  });
+  }) : super(key: key);
 
   final SettingsController controller;
   final ThemeController themeController;
-
   final double height;
   final double width;
 
@@ -39,26 +40,34 @@ class _LanguageMenuState extends State<LanguageMenu> {
         child: Row(
           children: [
             DropdownMenu(
-                inputDecorationTheme:
-                    InputDecorationTheme(enabledBorder: InputBorder.none),
-                trailingIcon: Icon(Icons.arrow_drop_down_outlined,
-                    size: 40.0,
-                    color: widget.themeController.isLightMode.value
-                        ? kLightPrimaryTextColor.withOpacity(0.8)
-                        : kprimaryTextColor.withOpacity(0.8)),
-                width: widget.width * 0.78,
-                initialSelection: 'English',
-                label: const Text('Change Language'),
-                dropdownMenuEntries:
-                    widget.controller.optionslocales.entries.map((e) {
-                  return DropdownMenuEntry(
-                    value: e.key,
-                    label: "${e.value['description']}",
-                  );
-                }).toList(),
-                onSelected: (newValue) {
-                  widget.controller.updateLocale(newValue!);
-                }),
+              inputDecorationTheme: InputDecorationTheme(
+                enabledBorder: InputBorder.none,
+              ),
+              trailingIcon: Icon(
+                Icons.arrow_drop_down_outlined,
+                size: 40.0,
+                color: widget.themeController.isLightMode.value
+                    ? kLightPrimaryTextColor.withOpacity(0.8)
+                    : kprimaryTextColor.withOpacity(0.8),
+              ),
+              width: widget.width * 0.78,
+
+              initialSelection: 'English',
+
+              label: const Text('Change Language'),
+
+              dropdownMenuEntries: widget.controller.optionslocales.entries
+                  .map(
+                    (e) => DropdownMenuEntry(
+                      value: e.key,
+                      label: "${e.value['description']}",
+                    ),
+                  )
+                  .toList(),
+              onSelected: (newValue) {
+                widget.controller.updateLocale(newValue!);
+              },
+            ),
           ],
         ),
       ),
