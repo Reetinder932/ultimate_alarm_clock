@@ -28,8 +28,7 @@ class StopwatchView extends GetView<TimerController> {
 
   void _startTimer() {
     timer = Timer.periodic(const Duration(milliseconds: 30), (Timer t) {
-      _updateResult();
-    });
+      _updateResult();});
     _stopwatch.start();
     isTimerPaused.value = false;
   }
