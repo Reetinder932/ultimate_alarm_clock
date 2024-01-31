@@ -130,7 +130,7 @@ class AudioUtils {
 
   /// FNV-1a 64bit hash algorithm optimized for Dart Strings
   static int fastHash(String string) {
-    var hash = 0xcbf29ce484222325;
+    var hash = 0xcbf29ce4842;
 
     var i = 0;
     while (i < string.length) {

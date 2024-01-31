@@ -15,7 +15,7 @@ extension GetAlarmModelCollection on Isar {
 
 const AlarmModelSchema = CollectionSchema(
   name: r'AlarmModel',
-  id: 1796575337475990193,
+  id: 1796575337475,
   properties: {
     r'activityInterval': PropertySchema(
       id: 0,

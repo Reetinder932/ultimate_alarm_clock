@@ -6,6 +6,7 @@ class StopwatchBinding extends Bindings {
   void dependencies() {
     Get.put<StopwatchController>(
       StopwatchController(),
+      permanent: true,
     );
   }
 }
